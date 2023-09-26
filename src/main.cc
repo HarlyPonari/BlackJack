@@ -1,5 +1,6 @@
 #include <iostream>
-#include "deck.h"
+#include "deck.hpp"
+
 
 //Need to make a function to calculate the score of the dealer's hand
 

@@ -1,8 +1,8 @@
-#ifndef DECK_H
-#define DECK_H
+#ifndef DECK_HPP
+#define DECK_HPP
 
-#include <stack>
-#include "card.h"
+#include <vector>
+#include "card.hpp"
 
 class Deck
 {
@@ -13,7 +13,7 @@ class Deck
     int cardsLeft() const;
 
   private:
-    std::stack<Card> cards;
+    std::vector<Card> cards;
     int currentCardIndex;
 };
 

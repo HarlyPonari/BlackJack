@@ -39,7 +39,7 @@ class Card
     }
     
     ~Card(){
-
+      
     }
 
 
