@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include "deck.h"
 
 
 //Need to make a function to calculate the score of the dealer's hand
@@ -8,6 +8,7 @@
 
 int main()
 {
+  Deck deck(1);
   /*
   Deck deck(1);
   

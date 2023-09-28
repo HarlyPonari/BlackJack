@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <random>
-#include "card.hpp"
+#include "card.h"
 
 const int MAX_SUIT_SIZE = 4;
 const int MAX_VALUE_SIZE = 13;

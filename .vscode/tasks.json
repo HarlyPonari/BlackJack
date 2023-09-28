@@ -7,9 +7,10 @@
 			"command": "gcc",
 			"args": [
 				"-g",
-				"${file}",
+				"${workspaceFolder}\\src\\*.cpp",
+				"${workspaceFolder}\\inc\\*.h",
 				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}",
+				"${fileDirname}/${fileBasenameNoExtension}.exe",
 			],
 			"options": {
 				"cwd": "${fileDirname}"
