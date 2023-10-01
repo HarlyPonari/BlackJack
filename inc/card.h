@@ -16,8 +16,6 @@ public:
 
 public:
   //Public Members
-  const int MAX_SUITS = 3;
-  const int MAX_VALUES = 12;
 
 private:
   //Private Members

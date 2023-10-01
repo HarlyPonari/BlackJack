@@ -5,8 +5,9 @@
 
 int main (){
 
-  Deck Deck(1);
-  
-  std::cout << Deck.deck.size() << std::endl;
+  //Creates a deck of 52 cards
+  Deck* deck = new Deck();
+
+  std::cout << deck->deck.size() << std::endl;
   return 0;
-} 
+}  
