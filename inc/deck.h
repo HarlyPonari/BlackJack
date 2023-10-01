@@ -1,20 +1,38 @@
-#ifndef DECK_H
-#define DECK_H
+#include <iostream>
+#include <stack>
+#include <random>
+#include <algorithm>
 
-#include <vector>
-#include "card.h"
+#include "../inc/card.h"
+#include "../inc/enums.h"
+
+const int MAX_SUITS = 3;
+const int MAX_VALUES = 12;
+
 
 class Deck
 {
   public:
-    Deck(unsigned int amountOfDecks);
-    void shuffle();
+    //Methods
+    Deck(unsigned int deckAmount);
+    ~Deck();
     Card drawCard();
-    int cardsLeft() const;
+    void shuffleDeck();
+
+    std::stack<Card> deck;
 
   private:
-    std::vector<Card> cards;
-    int currentCardIndex;
-};
+    //Methods
+    void incrementValue(int& currValue);
+    void incrementSuit(int& curr_suit);
 
-#endif
+  private:
+    //Members
+    
+    suit currSuit;
+    value currValue;
+    int curr_suit = 0;
+    int curr_value = 0;
+  
+
+};

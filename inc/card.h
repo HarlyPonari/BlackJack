@@ -1,19 +1,29 @@
 #ifndef CARD_H
 #define CARD_H
 
+#include <iostream>
+#include "../inc/enums.h"
 
-enum suit { spades, hearts, diamonds, clubs };
-enum value { ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king };
+
 
 class Card{
-  public:
-    Card(int currSuit, int currValue);
-    suit getSuit() const;
-    value getValue() const;
+public:
+  //Public Methods
+  Card(int currSuit, int currValue);
+  ~Card();
+  suit getSuit() const;
+  value getValue() const;
 
-  private:
-    suit cardSuit;
-    value cardValue;
+public:
+  //Public Members
+  const int MAX_SUITS = 3;
+  const int MAX_VALUES = 12;
+
+private:
+  //Private Members
+  suit currSuit;
+  value currValue;
 };
+
 
 #endif

@@ -2,39 +2,20 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "cppbuild",
-			"label": "C/C++: gcc.exe build active file",
-			"command": "gcc",
+			"label": "build",
+			"type": "shell",
+			"command": "g++",
 			"args": [
-				"-g",
-				"${workspaceFolder}\\src\\*.cpp",
-				"${workspaceFolder}\\inc\\*.h",
+				"-I",
+				"${workspaceFolder}/inc",
+				"${workspaceFolder}/src/*.cpp",
 				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}.exe",
-			],
-			"options": {
-				"cwd": "${fileDirname}"
-			},
-			"problemMatcher": [
-				"$gcc"
+				"${workspaceFolder}/bin/output"
 			],
 			"group": {
 				"kind": "build",
 				"isDefault": true
-			},
-			"detail": "compiler: V:\\Programs\\Compilers\\CPP\\mingw64\\bin\\gcc.exe"
-		},
-		{
-			"type": "shell",
-			"label": "Build and Run active file",
-			"command": "V:\\Programs\\Compilers\\CPP\\mingw64\\bin\\gcc.exe -g ${file} -o ${fileDirname}\\${fileBasenameNoExtension}.exe && ${fileDirname}\\${fileBasenameNoExtension}.exe",
-			"options": {
-				"cwd": "${fileDirname}"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"detail": "compiler: V:\\Programs\\Compilers\\CPP\\mingw64\\bin\\gcc.exe"
+			}
 		}
 	]
 }
