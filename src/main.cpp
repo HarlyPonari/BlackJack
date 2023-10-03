@@ -1,13 +1,25 @@
 #include <iostream>
 
-#include "../inc/deck.h"
+#include "../inc/game.h"
 
 
 int main (){
+  std::string playerName;
 
-  //Creates a deck of 52 cards
-  Deck* deck = new Deck();
+  std::cout << "Welcome to Blackjack!" << std::endl;
+  std::cout << "Enter a name to start" << std::endl;
+  std::cin >> playerName;
 
-  std::cout << deck->deck.size() << std::endl;
+  Game* game = new Game();
+
+  Player player1(playerName, 1000.0f);
+  
+  game->initGame();
+  
+  while(game->PlayAgain()){
+
+  }
+  delete game;
+
   return 0;
 }  

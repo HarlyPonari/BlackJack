@@ -6,9 +6,10 @@
 #include "../inc/card.h"
 
 
-Player::Player(std::string name){
+Player::Player(std::string name, float money){
   this->name = name;
-  score = 0;
+  this->money = money;
+  handValue = 0;
 }
 
 Player::~Player(){
@@ -23,7 +24,16 @@ void Player::hitCard(Card card){
 
 int Player::getScore(){
   for(int i = 0; i < hand.size(); i++){
-    score += hand[i].getValue();
+    handValue += hand[i].getValue();
   }
-  return score;
+  return handValue;
 }
+
+float Player::getMoney(){
+  return money;
+}
+
+void Player::addMoney(float money){
+  this->money += money;
+}
+

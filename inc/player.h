@@ -8,15 +8,19 @@
 
 class Player{
 public:
-  Player(std::string name);
+  Player(std::string name, float money);
   ~Player();
   int getScore();
   void hitCard(Card card);
+  float getMoney();
+  void addMoney(float money);
 
 private:
   std::string name;
   std::vector<Card> hand;
-  int score;
+  int handValue;
+
+  float money{1000.0f};
 };
 
 #endif

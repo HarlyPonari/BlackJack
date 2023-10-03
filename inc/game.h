@@ -14,9 +14,14 @@ public:
   Game();
   ~Game();
   void initGame();
+  bool NextRound();
+  bool GameOver();
+  bool PlayAgain();
 
 
 private:
+  void checkAnswer(char answer); 
+
   std::vector<Card> dealerHand;
   Card* dealerHandPtr;
 
