@@ -8,6 +8,7 @@
 
 class Player{
 public:
+  Player(float money);
   Player(std::string name, float money);
   ~Player();
   int getScore();

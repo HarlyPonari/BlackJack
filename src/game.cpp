@@ -16,9 +16,11 @@ Game::~Game(){
 void Game::initGame(){
   
   Deck* deck = new Deck();
-  Player player(std::string name);
-  Player dealer("Dealer", 10000.0f); //TODO: randomize dealer name
+  Player player(1000.0f);
 
+  //TODO: randomize dealer name
+  Player dealer("Dealer", 10000.0f); 
+  
   switch (dealerHand.size())
   {
   case 0:
@@ -37,48 +39,38 @@ void Game::initGame(){
       players[i].hitCard(deck->drawCard());
     }
     break;
-  
   default:
     std::cout << "Error" << std::endl;
     break;
   }
-
 }
 
-bool Game::NextRound(){
-  bool playAgain = false;
-  //TODO: check if player wants to play again
-  //TODO: check if player has enough money to play again
-  while (!playAgain)
+
+bool Game::checkAnswer(char answer){
+  switch (answer)
   {
-    for(auto player : players){
-      if (player.getMoney() < 10.0f)
-      {
-        std::cout << 
-        "You don't have enough money to play again" << std::endl;
-        return false;
-      }else{
-        std::cin >> playAgain;
-      }
-    }
+  case 'Y':
+  case 'y':   
+    return true;
+    break;
+  case 'N':
+  case 'n':
+    return false;
+    break;
+
+  default:
+    std::cout << "Invalid answer" << std::endl;
+    return checkAnswer(std::cin.get());
+    break;
   }
-  
-  
-
-  return true;
 }
-
-
 
 //Left off here
 //TODO: implement this function
 bool Game::PlayAgain(){
-  std::cout << "Do you want to play again? (y/n)" << std::endl;
-  char answer;
-
+  char answer{};
+  std::cout << "Play again? (Y/N)" << std::endl;
   std::cin >> answer;
-  
-
-  
+  return checkAnswer(answer);
 }
 

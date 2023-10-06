@@ -5,6 +5,10 @@
 #include "../inc/enums.h"
 #include "../inc/card.h"
 
+Player::Player(float money){
+  this->money = money;
+  handValue = 0;
+}
 
 Player::Player(std::string name, float money){
   this->name = name;

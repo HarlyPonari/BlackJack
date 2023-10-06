@@ -11,21 +11,27 @@
 
 class Game{
 public:
+  //functions
   Game();
   ~Game();
   void initGame();
   bool NextRound();
   bool GameOver();
   bool PlayAgain();
+  bool checkAnswer(char answer); 
 
+  
+  //variables
+  std::vector<Player> players;
+  Deck* deck;
 
 private:
-  void checkAnswer(char answer); 
+  
 
   std::vector<Card> dealerHand;
   Card* dealerHandPtr;
 
-  std::vector<Player> players;
+  
 
 private:
   
